@@ -18,9 +18,6 @@ class RiverCrossing():
 		elif sys.platform == "win32":
 			self.clear = "cls"
 
-
-
-
 	def start_screen(self):
 		os.system(self.clear)
 		print('''
@@ -47,9 +44,6 @@ class RiverCrossing():
 			''')
 		x = getch.getch()
 
-
-
-
 	def display(self):
 		print(f'''
 	[{self.on_river_left[0]}]  |- _|  [{self.on_river_right[0]}]
@@ -57,9 +51,6 @@ class RiverCrossing():
 	[{self.on_river_left[2]}]  |-_ |  [{self.on_river_right[2]}]
 	[{self.on_river_left[3]}]  |  -|  [{self.on_river_right[3]}]
 ''')
-
-
-
 
 	def safety_check(self):
 		self.left_side_safe = True
@@ -76,7 +67,6 @@ class RiverCrossing():
 				if i[0] in self.on_river_left and i[1] in self.on_river_left:
 					self.left_side_safe = False
 					break
-
 
 	def player_move(self):
 		self.on_river_left_revert = self.on_river_left.copy()
@@ -105,8 +95,7 @@ class RiverCrossing():
 						self.on_river_right[index] = move
 
 						break
-
-
+						
 					elif move in self.on_river_right and "H" in self.on_river_right:
 						index = self.on_river_right.index(move)
 						self.on_river_right[3] = " "
@@ -144,9 +133,7 @@ class RiverCrossing():
 			self.player_move()
 			if self.check_win():
 				break
-			
-
-
+				
 game = RiverCrossing()
 
 game.init_v1()
